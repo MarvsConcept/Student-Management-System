@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+
+<!--
+<h2>Signup</h2>
+<form method="POST">
+    {% csrf_token %}
+
+    {{ form.as_p }}
+    
+    <button type="submit" class="btn btn-primary">Signup</button>
+</form>
+
+
+-->
+<div class="col-md-6 offset-md-3"></div>
+
+<form method="POST" action="{% url 'signup' %}">
+  {% csrf_token %}
+      <fieldset>
+        <legend><strong> SignUp </strong></legend>
+        <div class="form-group">
+          <label for="exampleInputUsername" class="form-label mt-4">Username</label>
+          <input type="text" name="username" class="form-control" placeholder="Enter your Username">
+          {{ form.username }}
+        </div>
+         
+        <div class="form-group">
+          <label for="exampleInputPassword1" class="form-label mt-4">Enter your Password</label>
+          <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+          {{ form.password }}
+        </div>
+
+        <div class="form-group">
+            <label for="exampleInputPassword1" class="form-label mt-4">Enter your Email</label>
+            <input type="email" name="Email" class="form-control" id="exampleInputPassword1" placeholder="Email">
+            {{ form.emails }}
+          </div>
+        <br>
+        <button type="submit" class="btn btn-primary">Signup</button>
+      </fieldset>
+    </form>
+
+</div>
+{% endblock %}

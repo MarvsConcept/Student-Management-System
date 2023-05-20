@@ -11,8 +11,7 @@
           {% if user.is_authenticated %}
 
           <li class="nav-item">
-            <a class="nav-link" href="#"><i class="fa-solid fa-list fa-lg"></i>
-              All Students</a>
+            <a class="nav-link" href="#"><i class="fa-solid fa-list fa-lg"></i> All Students</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#"><i class="fa-solid fa-plus fa-lg"></i> Add Students</a>
@@ -20,17 +19,18 @@
 
 
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+            <a class="nav-link" href="{% url 'logout' %}"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
           </li>
 
           {% else %}
-
+          
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'register' %}">Register</a>
+            <a class="nav-link" href="{% url 'signup' %}"><i class="fa-solid fa-right-to-bracket"></i> Signup</a>
           </li>
+          
 
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'home' %}">Login</a>
+            <a class="nav-link" href="{% url 'home' %}"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
           </li>
           
           
