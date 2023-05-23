@@ -13,11 +13,10 @@
 <body>
     {% include 'navbar.html' %}
     <br>
-    <div class="container">
         <br>
         {% if messages %}
             {% for message in messages %}
-            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <div class="alert alert-warning alert-dismissible fade show col-md-6 offset-md-3" role="alert">
                 {{ message }}
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
@@ -25,7 +24,7 @@
         {% endif %}
     {% block content %}
     {% endblock %}
-    </div>
+    
 
     <footer class="mt-auto mb-4">
         <div class="text-center">

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+<div class="container-fluid col-md-6 offset-md-3">
+
+            <div class="card bg-light ">
+              <div class="card-header"><strong>{{ student_record }}</strong></div>
+              <div class="card-body">
+                <p class="card-text">
+                    <strong> Matric No: </strong>{{student_record.matric_no}}
+                   <p>
+                   <strong> Faculty: </strong>{{student_record.faculty}}
+                    <p>
+                    <strong> Department: </strong>{{student_record.department}}
+                    <p>
+                    <strong> Email: </strong>{{student_record.email}}
+                    <p>
+                    <strong> GPA </strong>{{student_record.gpa}}
+                  </div>
+                </p>
+            </div>
+            <br>
+    <a href="{% url 'home' %}" class= "btn btn-primary"> Back </a>
+</div>
+</div>
+
+
+{% endblock %}

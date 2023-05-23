@@ -11,10 +11,7 @@
           {% if user.is_authenticated %}
 
           <li class="nav-item">
-            <a class="nav-link" href="#"><i class="fa-solid fa-list fa-lg"></i> All Students</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#"><i class="fa-solid fa-plus fa-lg"></i> Add Students</a>
+            <a class="nav-link" href="{% url 'add_student' %}"><i class="fa-solid fa-plus fa-lg"></i> Add Students</a>
           </li>
 
 

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<div class="container-fluid col-md-6 offset-md-3 ">
+     <div class="card bg-light ">
+        <div class="card-header"><strong><h3>Add Student Record</h3></strong></div>
+        <div class="card-body">
+            <form method="POST" action="{% url 'add_student' %}">
+                {% csrf_token %}
+                
+                {{ form.as_p}}
+                    <br>
+
+                <button type="submit" class="btn btn-primary">Add Student Record</button>
+            </form>
+        </div>
+</div>
+
+
+
+
+{% endblock %}
