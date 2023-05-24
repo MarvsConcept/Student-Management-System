@@ -8,13 +8,14 @@
     <div class="row">
         <div class="col-12">
             <div class="card bg-light ms-4 me-4 mb-4">
-              <div class="card-header"><strong> Students Records </strong></div>
+              <div class="card-header"><strong> <i class="fa-solid fa-list fa-lg"></i> Students Records </strong></div>
               <div class="card-body">
                 <p class="card-text">
                   <div class="table-responsive">
                     <table class="table table-hover table-bordered">
                       <thead class="table-dark">
                         <tr>
+                          <th scope="col">ID</th>
                           <th scope="col">Matric No</th>
                           <th scope="col">Name</th>
                           <th scope="col">Faculty</th>
@@ -27,6 +28,7 @@
                       <tbody>
                         {% for record in records %}
                         <tr>
+                          <th>{{record.id}}</th>
                           <th>{{record.matric_no}}</th>
                           <td>{{record.first_name}} {{record.last_name}}</td>
                           <td>{{record.faculty}}</td>
@@ -36,7 +38,7 @@
                           <td><a href="{% url 'record' record.id %}"> <button type="button" class="btn btn-success me-1">
                               <i class="fa-solid fa-circle-info fa-lg"></i>
                             </button></a>
-                            <a href="{% url 'record' record.id %}"> <button type="button" class="btn btn-warning me-1">
+                            <a href="{% url 'update_record' record.id %}"> <button type="button" class="btn btn-warning me-1">
                               <i class="fa-solid fa-pen-to-square fa=lg"></i>></i>
                             </button></a>
                             <a class="btn btn-danger   me-1" href="{% url 'delete_record' record.id %}"><i class="fa-solid fa-trash-can fa-lg"></i></a>
@@ -64,8 +66,6 @@
 
       <form method="POST" action="{% url 'home' %}">
         {% csrf_token %}
-          <fieldset>
-            <legend>Login</legend>
             <div class="form-group">
               <label for="exampleInputUsername" class="form-label mt-4">Username</label>
               <input type="text" name="username" class="form-control" placeholder="Enter your Username">
@@ -76,7 +76,6 @@
             </div>
             <br>
             <button type="submit" class="btn btn-primary">Login</button>
-          </fieldset>
         </form>
     </div>
 </div>

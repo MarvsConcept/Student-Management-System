@@ -30,3 +30,15 @@ class AddRecordForm(forms.ModelForm):
     class Meta:
        model = Record
        exclude = ("user",) 
+       
+class AddRecordForm(forms.ModelForm):
+    matric_no = forms.CharField(required=True, widget=forms.TextInput(attrs={'placeholder':'Matric No', 'class':'form-control'}), label="")
+    first_name =forms.CharField(required=True, widget=forms.TextInput(attrs={'placeholder':'First Name', 'class':'form-control'}), label="")
+    last_name = forms.CharField(required=True, widget=forms.TextInput(attrs={'placeholder':'Last Name', 'class':'form-control'}), label="")
+    faculty = forms.CharField(required=True, widget=forms.TextInput(attrs={'placeholder':'Faculty', 'class':'form-control'}), label="")
+    department = forms.CharField(required=True, widget=forms.TextInput(attrs={'placeholder':'Deparment', 'class':'form-control'}), label="")
+    email =  forms.EmailField(required=True, widget=forms.TextInput(attrs={'placeholder':'Email', 'class':'form-control'}), label="")
+    gpa = forms.FloatField(required=True, widget=forms.TextInput(attrs={'placeholder':'GPA', 'class':'form-control'}), label="")
+    class Meta:
+       model = Record
+       exclude = ("user",) 
